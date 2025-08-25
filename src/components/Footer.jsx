@@ -29,22 +29,22 @@ function Footer() {
 
         <div className="footer-links">
             <div className="footer-column">
-                <h4>Information</h4>
+                <h4>Quick Links</h4>
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/favorites">Favorites</Link></li>
-                    <li><Link to="/blog">Blog</Link></li>
-                    <li><Link to="/testimonials">Testimonials</Link></li>
-                    <li><Link to="/events">Events</Link></li>
+                    <li><Link to="#">Ancient story</Link></li>
+                    <li><Link to="#">Cartoon</Link></li>
+                    <li><Link to="#">War II</Link></li>
                 </ul>
             </div>
             <div className="footer-column">
                 <h4>Helpful Links</h4>
                 <ul>
-                    <li><Link to="/services">Services</Link></li>
-                    <li><Link to="/support">Supports</Link></li>
-                    <li><Link to="/terms">Terms & Condition</Link></li>
-                    <li><Link to="/privacy">Privacy Policy</Link></li>
+                    <li><Link to="#">Services</Link></li>
+                    <li><Link to="#">Supports</Link></li>
+                    <li><Link to="#">Condition</Link></li>
+                    <li><Link to="#">Privacy Policy</Link></li>
                 </ul>
             </div>
             <div className="footer-column">
