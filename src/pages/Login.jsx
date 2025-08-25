@@ -18,7 +18,7 @@ function Login() {
     if (success) {
       navigate("/");
     } else {
-      setError("Invalid email or password. Please try again.");
+      setError("Incorrect email or password. Please try again.");
     }
   };
 
