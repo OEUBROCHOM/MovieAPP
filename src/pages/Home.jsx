@@ -49,6 +49,16 @@ function Home(){
    
     return (
         <div className="home">
+            <div className="banner">
+                <div className="banner-content">
+                    <h1 className="banner-title">Discover Amazing <span>Movies</span></h1>
+                    <p className="banner-description">
+                        Explore the latest and most popular films. Search, watch, and enjoy your favorite movies anytime.
+                    </p>
+                    <button className="banner-button">Watch Now</button>
+                </div>
+            </div>
+
             <form onSubmit={handleSearch} className="search-form">
                 <input 
                     type="text" 
