@@ -1,49 +1,60 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom"; // Change Link to NavLink
 import { useAuth } from "../contexts/AuthContext";
-import { FaBars, FaTimes } from "react-icons/fa"; 
+import { FaBars, FaTimes } from "react-icons/fa";
 import "../css/Navbar.css";
 
 function NavBar() {
-  const { user, logout, isAuthenticated } = useAuth()
-  const navigate = useNavigate()
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { user, logout, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    logout()
-    navigate("/")
+    logout();
+    navigate("/");
   };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
     <nav className="navbar-container">
         <div className="navbar-logo">
-            <img src="/images/logo.png" alt="logo"  className="logo"/>
+            <img src="/images/logo.png" alt="logo" className="logo" />
         </div>
         <div className="navbar-left">
-            <Link to="/" className="navbar-brand">Movie App</Link>
+            <NavLink to="/" className="navbar-brand"> Movie App </NavLink>
         </div>
 
         <div className="navbar-right">
-            <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Toggle navigation menu">
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+            <button
+                className="mobile-menu-toggle"
+                onClick={toggleMobileMenu}
+                aria-label="Toggle navigation menu"
+            >
+                {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
             </button>
 
             <div className={`navbar-links ${isMobileMenuOpen ? "open" : ""}`}>
-                <Link to="/" className="nav-link" onClick={toggleMobileMenu}> Home</Link>
-                <Link to="/favorites" className="nav-link" onClick={toggleMobileMenu}>Favorites</Link>
+                <NavLink to="/" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")} onClick={toggleMobileMenu}> Home </NavLink>
+                <NavLink to="/favorites" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}onClick={toggleMobileMenu}> Favorites </NavLink>
                 {!isAuthenticated ? (
                     <>
-                        <Link to="/login" className="nav-link login-btn" onClick={toggleMobileMenu}>Login</Link>
-                        <Link to="/signup" className="nav-link signup-btn" onClick={toggleMobileMenu}>Sign Up</Link>
+                        <NavLink to="/login" className="nav-link login-btn" onClick={toggleMobileMenu}> Login </NavLink>
+                        <NavLink to="/signup" className={({ isActive }) => (isActive ? "nav-link signup-active" : "nav-link signup-btn")} onClick={toggleMobileMenu}> Sign Up </NavLink>
                     </>
                 ) : (
                     <>
                         <span className="nav-user">Hi, {user.username}</span>
-                        <button type="button" onClick={() => { handleLogout(); toggleMobileMenu(); }} className="nav-link logout-btn">
+                        <button
+                            type="button"
+                            onClick={() => {
+                            handleLogout();
+                            toggleMobileMenu();
+                            }}
+                            className="nav-link logout-btn"
+                        >
                             Logout
                         </button>
                     </>
