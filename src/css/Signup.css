@@ -1,0 +1,108 @@
+/* Signup.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.signup-page {
+  height: 100vh;
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/images/signup.gif") no-repeat center center;
+  background-size: cover;
+}
+
+.auth-form {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  text-align: center;
+  color: #fff;
+}
+
+.auth-form h2 {
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+/*label group */
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 10px;
+  border: none;
+  border-bottom: 2px solid #555; 
+  background: transparent; 
+  font-size: 16px;
+  outline: none;
+  color: #fff;
+}
+
+.form-group input:focus {
+  border-bottom: 2px solid #e74c3c;
+}
+
+.form-group label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+/*label on focus*/
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  top: -8px;
+  left: 8px;
+  font-size: 12px;
+  color: #e74c3c;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 4px;
+}
+
+/* Buttons*/
+.auth-form button {
+  background-color: #e74c3c; 
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #c0392b;
+}
+
+/*Switch link*/
+.switch-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.switch-link a {
+  color: #e74c3c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
